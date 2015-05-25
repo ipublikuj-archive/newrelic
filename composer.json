@@ -1,0 +1,38 @@
+{
+	"name"			: "ipub/newrelic",
+	"type"			: "library",
+	"description"	: " System logger for New Relic service under Nette framework",
+	"keywords"		: ["nette", "newrelic", "ipub", "ipublikuj"],
+	"homepage"		: "https://github.com/iPublikuj/newrelic.git",
+	"license"		: ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+
+	"authors": [
+		{
+			"name"		: "Adam Kadlec",
+			"homepage"	: "http://www.ipublikuj.eu/"
+		}
+	],
+
+	"support":{
+		"email"		:"support@ipublikuj.eu",
+		"issues"	:"https://github.com/iPublikuj/newrelic/issues"
+	},
+
+	"require": {
+		"php"				: ">=5.4.0",
+		"nette/application"	: "~2.2",
+		"nette/http"		: "~2.2",
+		"tracy/tracy"		: "~2.2"
+	},
+
+	"require-dev": {
+		"nette/tester"		: "@dev",
+		"janmarek/mockista"	: "@dev"
+	},
+
+	"autoload": {
+		"psr-0": {
+			"IPub\\NewRelic\\": "src/"
+		}
+	}
+}
