@@ -9,18 +9,8 @@ Add ability to monitor you application based on [Nette Framework](http://nette.o
 
 The best way to install ipub/newrelic is using  [Composer](http://getcomposer.org/):
 
-```json
-{
-	"require": {
-		"ipub/newrelic": "dev-master"
-	}
-}
-```
-
-or
-
 ```sh
-$ composer require ipub/newrelic:@dev
+$ composer require ipub/newrelic
 ```
 
 After that you have to register extension in config.neon.
