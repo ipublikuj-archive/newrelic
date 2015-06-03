@@ -3,7 +3,7 @@
 [![Latest Stable Version](https://img.shields.io/packagist/v/ipub/newrelic.svg?style=flat-square)](https://packagist.org/packages/ipub/newrelic)
 [![Composer Downloads](https://img.shields.io/packagist/dt/ipub/newrelic.svg?style=flat-square)](https://packagist.org/packages/ipub/newrelic)
 
-Add ability to monitor you application based on [Nette Framework](http://nette.org/) with [NewRelic](http://www.newrelic.com/) service
+System logger for [NewRelic](http://www.newrelic.com/) service for [Nette Framework](http://nette.org/)
 
 ## Installation
 

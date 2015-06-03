@@ -1,14 +1,15 @@
 {
 	"name"			: "ipub/newrelic",
 	"type"			: "library",
-	"description"	: " System logger for New Relic service under Nette framework",
+	"description"	: "System logger for New Relic service for Nette framework",
 	"keywords"		: ["nette", "newrelic", "ipub", "ipublikuj"],
-	"homepage"		: "https://github.com/iPublikuj/newrelic.git",
+	"homepage"		: "https://github.com/iPublikuj/newrelic",
 	"license"		: ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
 
 	"authors": [
 		{
-			"name"		: "Adam Kadlec",
+			"name"		: "iPublikuj:cms",
+			"email"		: "info@ipublikuj.eu",
 			"homepage"	: "http://www.ipublikuj.eu/"
 		}
 	],
