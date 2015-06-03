@@ -9,18 +9,8 @@ System logger for [NewRelic](http://www.newrelic.com/) service for [Nette Framew
 
 The best way to install ipub/newrelic is using  [Composer](http://getcomposer.org/):
 
-```json
-{
-	"require": {
-		"ipub/newrelic": "dev-master"
-	}
-}
-```
-
-or
-
 ```sh
-$ composer require ipub/newrelic:@dev
+$ composer require ipub/newrelic
 ```
 
 After that you have to register extension in config.neon.
