@@ -25,9 +25,9 @@ class OnErrorHandler extends Nette\Object
 {
 	/**
 	 * @param Application\Application $app
-	 * @param \Exception $ex
+	 * @param \Exception|\TypeError $ex
 	 */
-	public function __invoke(Application\Application $app, \Exception $ex)
+	public function __invoke(Application\Application $app, $ex)
 	{
 		// Check if new relict extension is loaded
 		if (!extension_loaded('newrelic')) {
