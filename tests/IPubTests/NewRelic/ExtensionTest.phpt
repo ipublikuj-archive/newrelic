@@ -34,9 +34,9 @@ class ExtensionTest extends Tester\TestCase
 	{
 		$dic = $this->createContainer();
 
-		Assert::true($dic->getService('gravatar.onStartupHandler') instanceof Events\OnStartupHandler);
-		Assert::true($dic->getService('gravatar.onRequestHandler') instanceof Events\OnRequestHandler);
-		Assert::true($dic->getService('gravatar.onErrorHandler') instanceof Events\OnErrorHandler);
+		Assert::true($dic->getService('newRelic.onStartupHandler') instanceof Events\OnStartupHandler);
+		Assert::true($dic->getService('newRelic.onRequestHandler') instanceof Events\OnRequestHandler);
+		Assert::true($dic->getService('newRelic.onErrorHandler') instanceof Events\OnErrorHandler);
 	}
 
 	/**
