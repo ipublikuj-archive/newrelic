@@ -2,15 +2,17 @@
 /**
  * NewRelicExtension.php
  *
- * @copyright	More in license.md
- * @license		http://www.ipublikuj.eu
- * @author		Adam Kadlec http://www.ipublikuj.eu
- * @package		iPublikuj:NewRelic!
- * @subpackage	DI
- * @since		5.0
+ * @copyright      More in license.md
+ * @license        http://www.ipublikuj.eu
+ * @author         Adam Kadlec http://www.ipublikuj.eu
+ * @package        iPublikuj:NewRelic!
+ * @subpackage     DI
+ * @since          1.0.0
  *
- * @date		25.05.15
+ * @date           25.05.15
  */
+
+declare(strict_types = 1);
 
 namespace IPub\NewRelic\DI;
 
@@ -18,8 +20,22 @@ use Nette;
 use Nette\DI;
 use Nette\PhpGenerator as Code;
 
-class NewRelicExtension extends DI\CompilerExtension
+use IPub;
+use IPub\NewRelic\Events;
+
+/**
+ * NewRelic extension container
+ *
+ * @package        iPublikuj:NewRelic!
+ * @subpackage     DI
+ *
+ * @author         Adam Kadlec <adam.kadlec@fastybird.com>
+ */
+final class NewRelicExtension extends DI\CompilerExtension
 {
+	/**
+	 * @return void
+	 */
 	public function loadConfiguration()
 	{
 		// Get container builder
@@ -27,26 +43,28 @@ class NewRelicExtension extends DI\CompilerExtension
 
 		// Register listener services
 		$builder->addDefinition($this->prefix('onStartupHandler'))
-			->setClass('IPub\NewRelic\Events\OnStartupHandler');
+			->setClass(Events\OnStartupHandler::class);
 
 		$builder->addDefinition($this->prefix('onRequestHandler'))
-			->setClass('IPub\NewRelic\Events\OnRequestHandler');
+			->setClass(Events\OnRequestHandler::class);
 
 		$builder->addDefinition($this->prefix('onErrorHandler'))
-			->setClass('IPub\NewRelic\Events\OnErrorHandler');
+			->setClass(Events\OnErrorHandler::class);
 
 		// Register listeners into application
 		$application = $builder->getDefinition('application');
-		$application->addSetup('$service->onStartup[] = ?', array('@' . $this->prefix('onStartupHandler')));
-		$application->addSetup('$service->onRequest[] = ?', array('@' . $this->prefix('onRequestHandler')));
-		$application->addSetup('$service->onError[] = ?', array('@' . $this->prefix('onErrorHandler')));
+		$application->addSetup('$service->onStartup[] = ?', ['@' . $this->prefix('onStartupHandler')]);
+		$application->addSetup('$service->onRequest[] = ?', ['@' . $this->prefix('onRequestHandler')]);
+		$application->addSetup('$service->onError[] = ?', ['@' . $this->prefix('onErrorHandler')]);
 	}
 
 	/**
 	 * @param Nette\Configurator $config
 	 * @param string $extensionName
+	 *
+	 * @return void
 	 */
-	public static function register(Nette\Configurator $config, $extensionName = 'newRelic')
+	public static function register(Nette\Configurator $config, string $extensionName = 'newRelic')
 	{
 		$config->onCompile[] = function (Nette\Configurator $config, Nette\DI\Compiler $compiler) use ($extensionName) {
 			$compiler->addExtension($extensionName, new NewRelicExtension());

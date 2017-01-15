@@ -2,19 +2,19 @@
 /**
  * OnStartupHandler.php
  *
- * @copyright	More in license.md
- * @license		http://www.ipublikuj.eu
- * @author		Adam Kadlec http://www.ipublikuj.eu
- * @package		iPublikuj:NewRelic!
- * @subpackage	Events
- * @since		5.0
+ * @copyright      More in license.md
+ * @license        http://www.ipublikuj.eu
+ * @author         Adam Kadlec http://www.ipublikuj.eu
+ * @package        iPublikuj:NewRelic!
+ * @subpackage     Events
+ * @since          1.0.0
  *
- * @date		25.05.15
+ * @date           25.05.15
  */
 
-namespace IPub\NewRelic\Events;
+declare(strict_types = 1);
 
-use Kdyby;
+namespace IPub\NewRelic\Events;
 
 use Nette;
 use Nette\Application;
@@ -24,7 +24,15 @@ use Tracy\Debugger;
 use IPub;
 use IPub\NewRelic\Loggers;
 
-class OnStartupHandler extends Nette\Object
+/**
+ * On application startuo event
+ *
+ * @package        iPublikuj:NewRelic!
+ * @subpackage     Events
+ *
+ * @author         Adam Kadlec <adam.kadlec@fastybird.com>
+ */
+final class OnStartupHandler extends Nette\Object
 {
 	/**
 	 * @param Application\Application $application

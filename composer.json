@@ -4,7 +4,7 @@
 	"description"	: "System logger for New Relic service for Nette framework",
 	"keywords"		: ["nette", "newrelic", "ipub", "ipublikuj"],
 	"homepage"		: "https://github.com/iPublikuj/newrelic",
-	"license"		: ["BSD-3-Clause", "GPL-2.0", "GPL-3.0"],
+	"license"		: ["GPL-2.0", "GPL-3.0"],
 
 	"authors": [
 		{
@@ -19,16 +19,29 @@
 		"issues"	:"https://github.com/iPublikuj/newrelic/issues"
 	},
 
+	"extra": {
+		"ipub"	: {
+			"configuration" : {
+				"extensions" : {
+					"newRelic" : "IPub\\NewRelic\\DI\\NewRelicExtension"
+				}
+			}
+		}
+	},
+
 	"require": {
-		"php"				: ">=5.4.0",
-		"nette/application"	: "~2.2",
-		"nette/http"		: "~2.2",
-		"tracy/tracy"		: "~2.2"
+		"php"	: ">=7.0.0",
+
+		"nette/application"	: "~2.3",
+		"nette/http"		: "~2.3",
+
+		"tracy/tracy"	: "~2.3",
+
+		"pds/skeleton"	: "@dev"
 	},
 
 	"require-dev": {
-		"nette/tester"		: "@dev",
-		"janmarek/mockista"	: "@dev"
+		"nette/tester"	: "@dev"
 	},
 
 	"autoload": {

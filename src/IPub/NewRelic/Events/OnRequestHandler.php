@@ -2,32 +2,38 @@
 /**
  * OnRequestHandler.php
  *
- * @copyright	More in license.md
- * @license		http://www.ipublikuj.eu
- * @author		Adam Kadlec http://www.ipublikuj.eu
- * @package		iPublikuj:NewRelic!
- * @subpackage	Events
- * @since		5.0
+ * @copyright      More in license.md
+ * @license        http://www.ipublikuj.eu
+ * @author         Adam Kadlec http://www.ipublikuj.eu
+ * @package        iPublikuj:NewRelic!
+ * @subpackage     Events
+ * @since          1.0.0
  *
- * @date		25.05.14
+ * @date           25.05.14
  */
 
-namespace IPub\NewRelic\Events;
+declare(strict_types = 1);
 
-use Kdyby;
+namespace IPub\NewRelic\Events;
 
 use Nette;
 use Nette\Application;
 
-use IPub;
-
-class OnRequestHandler extends Nette\Object
+/**
+ * On application request event
+ *
+ * @package        iPublikuj:NewRelic!
+ * @subpackage     Events
+ *
+ * @author         Adam Kadlec <adam.kadlec@fastybird.com>
+ */
+final class OnRequestHandler extends Nette\Object
 {
 	/**
-	 * @param Application\Application $app
+	 * @param Application\Application $application
 	 * @param Application\Request $request
 	 */
-	public function __invoke(Application\Application $app, Application\Request $request)
+	public function __invoke(Application\Application $application, Application\Request $request)
 	{
 		// Check if new relict extension is loaded
 		if (!extension_loaded('newrelic')) {

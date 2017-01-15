@@ -2,21 +2,31 @@
 /**
  * Logger.php
  *
- * @copyright	More in license.md
- * @license		http://www.ipublikuj.eu
- * @author		Adam Kadlec http://www.ipublikuj.eu
- * @package		iPublikuj:Framework!
- * @subpackage	Loggers
- * @since		5.0
+ * @copyright      More in license.md
+ * @license        http://www.ipublikuj.eu
+ * @author         Adam Kadlec http://www.ipublikuj.eu
+ * @package        iPublikuj:Framework!
+ * @subpackage     Loggers
+ * @since          1.0.0
  *
- * @date		12.03.14
+ * @date           12.03.14
  */
+
+declare(strict_types = 1);
 
 namespace IPub\NewRelic\Loggers;
 
 use Tracy;
 
-class Logger extends Tracy\Logger
+/**
+ * Error logger
+ *
+ * @package        iPublikuj:NewRelic!
+ * @subpackage     Loggers
+ *
+ * @author         Adam Kadlec <adam.kadlec@fastybird.com>
+ */
+final class Logger extends Tracy\Logger
 {
 	/**
 	 * Logs message or exception to file and sends email notification.
