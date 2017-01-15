@@ -34,6 +34,7 @@
 
 		"nette/application"	: "~2.3",
 		"nette/http"		: "~2.3",
+		"nette/di"			: "~2.3",
 
 		"tracy/tracy"	: "~2.3",
 
