@@ -22,7 +22,6 @@ use Nette;
 use Tester;
 use Tester\Assert;
 
-use IPub;
 use IPub\NewRelic;
 use IPub\NewRelic\Events;
 

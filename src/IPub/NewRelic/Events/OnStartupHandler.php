@@ -21,7 +21,6 @@ use Nette\Application;
 
 use Tracy\Debugger;
 
-use IPub;
 use IPub\NewRelic\Loggers;
 
 /**
