@@ -4,7 +4,7 @@
  *
  * @copyright      More in license.md
  * @license        https://www.ipublikuj.eu
- * @author         Adam Kadlec https://www.ipublikuj.eu
+ * @author         Adam Kadlec <adam.kadlec@ipublikuj.eu>
  * @package        iPublikuj:NewRelic!
  * @subpackage     Events
  * @since          1.0.0
@@ -50,9 +50,7 @@ final class OnStartupHandler
 		}
 
 		// Register new relic logger into tracy
-		$logger = new Loggers\Logger();
-		$logger->directory =& Debugger::$logDirectory;
-		$logger->email =& Debugger::$email;
+		$logger = new Loggers\Logger(Debugger::$logDirectory, Debugger::$email);
 
 		Debugger::setLogger($logger);
 	}

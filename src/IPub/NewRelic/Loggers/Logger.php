@@ -4,7 +4,7 @@
  *
  * @copyright      More in license.md
  * @license        https://www.ipublikuj.eu
- * @author         Adam Kadlec https://www.ipublikuj.eu
+ * @author         Adam Kadlec <adam.kadlec@ipublikuj.eu>
  * @package        iPublikuj:Framework!
  * @subpackage     Loggers
  * @since          1.0.0
@@ -31,8 +31,8 @@ final class Logger extends Tracy\Logger
 	/**
 	 * Logs message or exception to file and sends email notification.
 	 *
-	 * @param string|array
-	 * @param  int one of constant self::INFO, WARNING, ERROR (sends email), EXCEPTION (sends email), CRITICAL (sends email)
+	 * @param string|array $message
+	 * @param int $priority one of constant self::INFO, WARNING, ERROR (sends email), EXCEPTION (sends email), CRITICAL (sends email)
 	 *
 	 * @return void
 	 */
