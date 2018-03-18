@@ -3,8 +3,8 @@
  * OnStartupHandler.php
  *
  * @copyright      More in license.md
- * @license        http://www.ipublikuj.eu
- * @author         Adam Kadlec http://www.ipublikuj.eu
+ * @license        https://www.ipublikuj.eu
+ * @author         Adam Kadlec https://www.ipublikuj.eu
  * @package        iPublikuj:NewRelic!
  * @subpackage     Events
  * @since          1.0.0
@@ -30,14 +30,19 @@ use IPub\NewRelic\Loggers;
  * @package        iPublikuj:NewRelic!
  * @subpackage     Events
  *
- * @author         Adam Kadlec <adam.kadlec@fastybird.com>
+ * @author         Adam Kadlec <adam.kadlec@ipublikuj.eu>
  */
-final class OnStartupHandler extends Nette\Object
+final class OnStartupHandler
 {
+	/**
+	 * Implement nette smart magic
+	 */
+	use Nette\SmartObject;
+
 	/**
 	 * @param Application\Application $application
 	 */
-	public function __invoke(Application\Application $application)
+	public function __invoke(Application\Application $application) : void
 	{
 		// Check if new relict extension is loaded
 		if (!extension_loaded('newrelic')) {

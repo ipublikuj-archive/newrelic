@@ -3,8 +3,8 @@
  * OnRequestHandler.php
  *
  * @copyright      More in license.md
- * @license        http://www.ipublikuj.eu
- * @author         Adam Kadlec http://www.ipublikuj.eu
+ * @license        https://www.ipublikuj.eu
+ * @author         Adam Kadlec https://www.ipublikuj.eu
  * @package        iPublikuj:NewRelic!
  * @subpackage     Events
  * @since          1.0.0
@@ -25,15 +25,20 @@ use Nette\Application;
  * @package        iPublikuj:NewRelic!
  * @subpackage     Events
  *
- * @author         Adam Kadlec <adam.kadlec@fastybird.com>
+ * @author         Adam Kadlec <adam.kadlec@ipublikuj.eu>
  */
-final class OnRequestHandler extends Nette\Object
+final class OnRequestHandler
 {
+	/**
+	 * Implement nette smart magic
+	 */
+	use Nette\SmartObject;
+
 	/**
 	 * @param Application\Application $application
 	 * @param Application\Request $request
 	 */
-	public function __invoke(Application\Application $application, Application\Request $request)
+	public function __invoke(Application\Application $application, Application\Request $request) : void
 	{
 		// Check if new relict extension is loaded
 		if (!extension_loaded('newrelic')) {

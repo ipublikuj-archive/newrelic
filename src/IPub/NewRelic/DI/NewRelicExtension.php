@@ -3,8 +3,8 @@
  * NewRelicExtension.php
  *
  * @copyright      More in license.md
- * @license        http://www.ipublikuj.eu
- * @author         Adam Kadlec http://www.ipublikuj.eu
+ * @license        https://www.ipublikuj.eu
+ * @author         Adam Kadlec https://www.ipublikuj.eu
  * @package        iPublikuj:NewRelic!
  * @subpackage     DI
  * @since          1.0.0
@@ -20,7 +20,6 @@ use Nette;
 use Nette\DI;
 use Nette\PhpGenerator as Code;
 
-use IPub;
 use IPub\NewRelic\Events;
 
 /**
@@ -29,14 +28,14 @@ use IPub\NewRelic\Events;
  * @package        iPublikuj:NewRelic!
  * @subpackage     DI
  *
- * @author         Adam Kadlec <adam.kadlec@fastybird.com>
+ * @author         Adam Kadlec <adam.kadlec@ipublikuj.eu>
  */
 final class NewRelicExtension extends DI\CompilerExtension
 {
 	/**
 	 * @return void
 	 */
-	public function loadConfiguration()
+	public function loadConfiguration() : void
 	{
 		// Get container builder
 		$builder = $this->getContainerBuilder();
@@ -64,7 +63,7 @@ final class NewRelicExtension extends DI\CompilerExtension
 	 *
 	 * @return void
 	 */
-	public static function register(Nette\Configurator $config, string $extensionName = 'newRelic')
+	public static function register(Nette\Configurator $config, string $extensionName = 'newRelic') : void
 	{
 		$config->onCompile[] = function (Nette\Configurator $config, Nette\DI\Compiler $compiler) use ($extensionName) {
 			$compiler->addExtension($extensionName, new NewRelicExtension());

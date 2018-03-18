@@ -3,8 +3,8 @@
  * Logger.php
  *
  * @copyright      More in license.md
- * @license        http://www.ipublikuj.eu
- * @author         Adam Kadlec http://www.ipublikuj.eu
+ * @license        https://www.ipublikuj.eu
+ * @author         Adam Kadlec https://www.ipublikuj.eu
  * @package        iPublikuj:Framework!
  * @subpackage     Loggers
  * @since          1.0.0
@@ -24,7 +24,7 @@ use Tracy;
  * @package        iPublikuj:NewRelic!
  * @subpackage     Loggers
  *
- * @author         Adam Kadlec <adam.kadlec@fastybird.com>
+ * @author         Adam Kadlec <adam.kadlec@ipublikuj.eu>
  */
 final class Logger extends Tracy\Logger
 {
@@ -36,7 +36,7 @@ final class Logger extends Tracy\Logger
 	 *
 	 * @return void
 	 */
-	public function log($message, $priority = self::INFO)
+	public function log($message, $priority = self::INFO) : void
 	{
 		parent::log($message, $priority);
 
